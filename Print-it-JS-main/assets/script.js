@@ -39,6 +39,7 @@ prevArrow.addEventListener('click', function () {
 		slideIndex = slideIndex - 1 < 0 ? indexLimit-1 : slideIndex - 1;
     	slide.src = slides[slideIndex].image;
 		tagLine.innerHTML = slides[slideIndex].tagLine;
+
 		updateDots(slideIndex);
 });
 
