@@ -23,8 +23,9 @@ const nextArrow = document.querySelector('.nextArrow');
 const slide= document.querySelector('.slide');
 const tagLine = document.querySelector('.tagLine');
 const dots = document.querySelectorAll('.dots button');
-let slideIndex = 0;
+
 const indexLimit = slides.length;
+let slideIndex = 0;
 
 
 nextArrow.addEventListener('click', function () {
@@ -38,7 +39,6 @@ prevArrow.addEventListener('click', function () {
 		slideIndex = slideIndex - 1 < 0 ? indexLimit-1 : slideIndex - 1;
     	slide.src = slides[slideIndex].image;
 		tagLine.innerHTML = slides[slideIndex].tagLine;
-		if (slideIndex < 0) slideIndex = indexLimit -1;
 		updateDots(slideIndex);
 });
 
@@ -47,7 +47,6 @@ dots.forEach((element, dotsIndex) => {
     element.addEventListener('click', function () {
         slideIndex = dotsIndex;
         navSlides(slideIndex);
-		console.log(dotsIndex);
     });
 });
 
